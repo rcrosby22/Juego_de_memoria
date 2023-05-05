@@ -1,0 +1,46 @@
+face card words = []
+<div class= "card"> //4 down 5 accross// 10 words and 5 spare words in a shuffle
+(preserve-3d to give a 3d look!!)
+Fisher-Yates shuffle algorithm  can be used to score and randomize the card*
+html/css 
+---
+Functions inside memory game
+1. card flips and flips back with a time limit
+2. Cards need to match and then be removed from equation
+3. board needs to be locked when cards are matched
+4. need a reset Functions
+5. need a shuffle feature to shuffle the board and maybe include new list of words
+6. Move counter
+7. 60 second count down from start game
+8. 3,2,1 Start!
+
+---
+var counter = 0
+const words = [english words]
+const spanishWords = [spanish words]
+const pickCards = [...words,...spanish words]
+const numberOfCards = pickCards.length
+
+function (generateCard) => {
+  document.querySelector(".card ")   //if selecting by class you need .word
+}
+//create cards use a for loop to create a grid for the card then we need to create attribute the card has, then move 1-20 of the cards array.length is the number of cards within the game.
+function createCards() => {
+  for (let index = 0; index < numberOfCards.length; index++) {
+    const element = array [index]     //condition, 1 ==1 true
+  }
+}
+function eventListener "click"
+we need to set another eventListener for the second "click", 
+ let (1 click will view attribute word)(second click will view the attribute)
+ counter = counter + 1          ///to count the turns
+   booleen needs to read true if match and false if doesnt match
+
+   if reads true its matched block future clicks
+   if false flip back
+
+   restart function ()=> {
+    
+   }
+
+
