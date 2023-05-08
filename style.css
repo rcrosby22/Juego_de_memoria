@@ -1,4 +1,65 @@
+.gameTitle {
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+  justify-content: center;
+}
+  
+
 body {
   font-family: 'Roboto', sans-serif;
   font-family: 'Sigmar', cursive;;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  font-size: 38px;
+  text-decoration: none;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(5, 10vmin);
+  grid-template-rows: repeat(4, 10vmin);
+  gap: 1vmin;
+  margin-top: -4vmin;
+  border: 7px solid pink;
+  background-color: aqua;
+
+}
+
+.cell{
+   font-size: 5vmin;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.cell:hover {
+  background-color: black;
+}
+
+.boardContainer {
+ display: grid;
+ justify-content: center;
+}
+
+.boardBox {
+  background-color: black;
+}
+
+.restartButton {
+  width: 100px;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Sigmar', cursive;;
+}
+.boardTools {
+display: flex;
+flex-direction: row; 
+align-items: center;
+justify-content: space-between;
 }
