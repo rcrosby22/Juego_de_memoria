@@ -101,16 +101,36 @@ const cards = [
 
 let clicks = 1
 let cardFlipped = []
+let isMatched = false
+let moves = 0
+let clickedContainers = []
+
+
+const revertBack = () =>{
+ // imageEl.setAttribute('src', 'images/emojis/black.avif')
+  for (let i = 0; i<clickedContainers.length; i++) {
+    clickedContainers[i].setAttribute('src', 'images/emojis/black.avif')
+  }
+  clickedContainers = []
+
+
+}
 
 function checkMatch() {
   clicks = 1
   if (cardFlipped[0] === cardFlipped[1]) {
     cardFlipped = []
-    alert('Good Match')
+    
+    clickedContainers = []
+    isMatched = true
+    console.log(isMatched)
   } else {revertBack()}
 }
 
-function flipCard() {
+function flipCard(evt) {
+  //update clicked container
+  clickedContainers.push(evt.target)
+ // console.log(clickedContainers)
   let reveal = this.getAttribute('data-revealed')
   if (reveal === 'false' && clicks ===1) {
     clicks = clicks + 1
@@ -121,6 +141,7 @@ function flipCard() {
     cardFlipped.push(data)
     console.log(cardFlipped)
   } else if (clicks === 2) {
+    moves++
      index = this.getAttribute('data-id')
       this.setAttribute('data-revealed', true)
       this.setAttribute('src', cards[index].img)
@@ -128,10 +149,22 @@ function flipCard() {
       clicks = 1
       cardFlipped.push(data)
     console.log(cardFlipped)
-      checkMatch()
+    setTimeout(
+checkMatch, 1000
+    )
+     // checkMatch()
+      //if(isMatched){
+       // if(this.getAttribute('src') == cards[index].img){
+       // alert('hurray!')
+       // }
+     // }
     }
+    updateMove()
+  
   }
-
+function updateMove(){
+  document.querySelector('.moves').innerHTML = moves;
+}
 
 const cardsContainer = document.querySelector('#board')
 const cardsCount = cards.length
@@ -151,6 +184,13 @@ function buildCard() {
     element.classList.add('card')
     imageEl.addEventListener('click', flipCard)
     cardsContainer.appendChild(element)
+    console.log('got here')
+    console.log(isMatched)
+    if(isMatched){
+      alert('Good Match!')
+      isMatched = false;
+    }
+    updateMove()
   }
 }
 shuffleCards()
