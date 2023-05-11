@@ -16,88 +16,87 @@ const cards = [
   {
     name: 'vaca',
     img: 'images/emojis/cow_1f404.png'
-  }
-]
-// {
+  },
 
-//   name:'Monkey',
-//   img:'monkey_1f412.png'
-// },
-// {
+ {
+   name:'Monkey',
+   img:'monkey_1f412.png'
+ },
+  {
 
-// name: 'Mono',
-// img:'monkey_1f412.png'
-// },
-// {
+name: 'Mono',
+img:'monkey_1f412.png'
+},
+{
 
-//   name: 'Chicken',
-//   img:'chicken_1f414.png'
-// },
-// {
+  name: 'Chicken',
+  img:'chicken_1f414.png'
+},
+{
 
-//   name: 'Pollo',
-//   img:'chicken_1f414.png'
-// },
-// {
+  name: 'Pollo',
+  img:'chicken_1f414.png'
+},
+{
 
-//   name: 'Rabbit',
-//   img:'rabbit_1f407.png'
-// },
-// {
+  name: 'Rabbit',
+  img:'rabbit_1f407.png'
+},
+{
 
-//   name:'Conejo',
-//   img:'rabbit_1f407.png'
-// },
-// {
+  name:'Conejo',
+  img:'rabbit_1f407.png'
+},
+{
 
-// name: 'Horse',
-// img:'horse_1f40e.png'
-// },
-// {
+name: 'Horse',
+img:'horse_1f40e.png'
+},
+{
 
-//   name: 'Cabello',
-//   img:'horse_1f40e.png'
-// },
-// {
+  name: 'Cabello',
+  img:'horse_1f40e.png'
+},
+{
 
-//   name: 'Bee',
-//   img:'honeybee_1f41d.png'
-// },
-// {
+  name: 'Bee',
+  img:'honeybee_1f41d.png'
+},
+{
 
-//   name: 'Abeja',
-//   img:'honeybee_1f41d.png'
-// },
-// {
+  name: 'Abeja',
+  img:'honeybee_1f41d.png'
+},
+{
 
-//   name:'Frog',
-//   img:'frog_1f438.png'
-// },
-// {
+  name:'Frog',
+  img:'frog_1f438.png'
+},
+{
 
-// name: 'Rana',
-// img:'frog_1f438.png'
-// },
-// {
+name: 'Rana',
+img:'frog_1f438.png'
+},
+{
 
-//   name: 'Snail',
-//   img:'snail_1f40c.png'
-// },
-// {
+  name: 'Snail',
+  img:'snail_1f40c.png'
+},
+{
 
-//   name: 'Caracol',
-//   img:'snail_1f40c.png'
-// },
-// {
+  name: 'Caracol',
+  img:'snail_1f40c.png'
+},
+{
 
-//   name: 'Snake',
-//   img:'snake_1f40d.png'
-// },
-// {
+  name: 'Snake',
+  img:'snake_1f40d.png'
+},
+{
 
-//   name:'Serpiente',
-//   img:'snake_1f40d.png'
-// }]
+  name:'Serpiente',
+  img:'snake_1f40d.png'
+}]
 
 let clicks = 1
 let cardFlipped = []
@@ -131,20 +130,30 @@ function flipCard(evt) {
   //update clicked container
   clickedContainers.push(evt.target)
  // console.log(clickedContainers)
+ let index = this.getAttribute('data-id')
+  
   let reveal = this.getAttribute('data-revealed')
+  let imageName = document.createElement('p')
+  imageName.classList.add('imageName')
+  imageName.innerHTML= cards[index].name
+
   if (reveal === 'false' && clicks ===1) {
     clicks = clicks + 1
-    let index = this.getAttribute('data-id')
+    
     this.setAttribute('data-revealed', true)
     this.setAttribute('src', cards[index].img)
+    this.parentElement.appendChild(imageName)
     let data = this.getAttribute('data-img')
     cardFlipped.push(data)
     console.log(cardFlipped)
   } else if (clicks === 2) {
     moves++
-     index = this.getAttribute('data-id')
+  // index = this.getAttribute('data-id')
+    //imageName.innerHTML= cards[index].name
+
       this.setAttribute('data-revealed', true)
       this.setAttribute('src', cards[index].img)
+      this.parentElement.appendChild(imageName)
       data = this.getAttribute('data-img')
       clicks = 1
       cardFlipped.push(data)
@@ -181,7 +190,7 @@ function buildCard() {
     imageEl.setAttribute('data-name', cards[I].name)
     imageEl.setAttribute('data-revealed', false)
     element.appendChild(imageEl)
-    element.classList.add('card')
+    element.classList.add('card-wrapper')
     imageEl.addEventListener('click', flipCard)
     cardsContainer.appendChild(element)
     console.log('got here')

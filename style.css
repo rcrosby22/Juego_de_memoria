@@ -3,6 +3,8 @@
   font-weight: 400;
   font-size: 30px;
   justify-content: center;
+  margin-bottom: -7px;
+  color: rgb(207, 54, 54);
 }
   
 
@@ -13,23 +15,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url(images/emojis/barn-farm-field_1308-68369.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  ;
 }
 a {
   font-size: 38px;
   text-decoration: none;
+  color: rgb(207, 54, 54);
 }
 .instructions {
-  color: #55148b
+  color: rgb(207, 54, 54)
 }
 
 #board {
   display: grid;
-  grid-template-columns: repeat(5, 15vmin);
-  grid-template-rows: repeat(4, 15vmin);
+  grid-template-columns: repeat(5, 17vmin);
+  grid-template-rows: repeat(4, 17vmin);
   gap: 1vmin;
-  margin-top: -4vmin;
-  border: 7px solid pink;
-  background-color: aqua;
+  margin-top: 5px;
+  border: 7px solid rgb(207, 54, 54);
+  
   
   
 }
@@ -38,7 +45,7 @@ a {
   flex-direction: column;
   justify-content: center;
 }
-.card {
+.card-wrapper {
   transform: rotateY(0);
   transition: 0.5s;
   background: linear-gradient(to bottom, rgba(69, 72, 77, 1) 0%, rgba(0, 0, 0, 1) 100%);
@@ -49,8 +56,9 @@ a {
   align-items: center;
   justify-content: center;
   list-style: none;
-  margin-top: 15px;
   cursor: pointer;
+  height: 125px;
+  padding: 8px;
 }
 
 .flipCard {
@@ -63,8 +71,8 @@ a {
   border-radius: 10px;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
 }
 
 .card.front {
@@ -73,9 +81,16 @@ justify-content: center;
 align-items: center;
 }
 .back {
-  
+  height: 80%;
  
 
+}
+.imageName {
+  height: 10%;
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
 }
 .boardContainer {
  display: grid;
@@ -90,10 +105,16 @@ align-items: center;
   width: 100px;
   font-family: 'Roboto', sans-serif;
   font-family: 'Sigmar', cursive;;
+  color: rgb(207, 54, 54);
 }
 .boardTools {
 display: flex;
 flex-direction: row; 
 align-items: center;
 justify-content: space-between;
+color: rgb(207, 54, 54);
+}
+
+.bodyOne {
+background-image: url(images/emojis/barn-farm-field_1308-68369.avif);
 }
