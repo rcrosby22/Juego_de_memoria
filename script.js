@@ -20,82 +20,82 @@ const cards = [
 
  {
    name:'Monkey',
-   img:'monkey_1f412.png'
+   img:'images/emojis/monkey_1f412.png'
  },
   {
 
 name: 'Mono',
-img:'monkey_1f412.png'
+img:'images/emojis/monkey_1f412.png'
 },
 {
 
   name: 'Chicken',
-  img:'chicken_1f414.png'
+  img:'images/emojis/chicken_1f414.png'
 },
 {
 
   name: 'Pollo',
-  img:'chicken_1f414.png'
+  img:'images/emojis/chicken_1f414.png'
 },
 {
 
   name: 'Rabbit',
-  img:'rabbit_1f407.png'
+  img:'images/emojis/rabbit_1f407.png'
 },
 {
 
   name:'Conejo',
-  img:'rabbit_1f407.png'
+  img:'images/emojis/rabbit_1f407.png'
 },
 {
 
 name: 'Horse',
-img:'horse_1f40e.png'
+img:'images/emojis/horse_1f40e.png'
 },
 {
 
   name: 'Cabello',
-  img:'horse_1f40e.png'
+  img:'images/emojis/horse_1f40e.png'
 },
 {
 
   name: 'Bee',
-  img:'honeybee_1f41d.png'
+  img:'images/emojis/honeybee_1f41d.png'
 },
 {
 
   name: 'Abeja',
-  img:'honeybee_1f41d.png'
+  img:'images/emojis/honeybee_1f41d.png'
 },
 {
 
   name:'Frog',
-  img:'frog_1f438.png'
+  img:'images/emojis/frog_1f438.png'
 },
 {
 
 name: 'Rana',
-img:'frog_1f438.png'
+img:'images/emojis/frog_1f438.png'
 },
 {
 
   name: 'Snail',
-  img:'snail_1f40c.png'
+  img:'images/emojis/snail_1f40c.png'
 },
 {
 
   name: 'Caracol',
-  img:'snail_1f40c.png'
+  img:'images/emojis/snail_1f40c.png'
 },
 {
 
   name: 'Snake',
-  img:'snake_1f40d.png'
+  img:'images/emojis/snake_1f40d.png'
 },
 {
 
   name:'Serpiente',
-  img:'snake_1f40d.png'
+  img:'images/emojis/snake_1f40d.png'
 }]
 
 let clicks = 1
