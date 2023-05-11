@@ -109,6 +109,7 @@ const revertBack = () =>{
  // imageEl.setAttribute('src', 'images/emojis/black.avif')
   for (let i = 0; i<clickedContainers.length; i++) {
     clickedContainers[i].setAttribute('src', 'images/emojis/black.avif')
+    clickedContainers[i].setAttribute('data-revealed', false)
   }
   clickedContainers = []
 
@@ -134,9 +135,10 @@ function flipCard(evt) {
   
   let reveal = this.getAttribute('data-revealed')
   let imageName = document.createElement('p')
+  //imageName.setAttribute('id', )
   imageName.classList.add('imageName')
   imageName.innerHTML= cards[index].name
-
+console.log('target',evt.target)
   if (reveal === 'false' && clicks ===1) {
     clicks = clicks + 1
     
@@ -161,18 +163,14 @@ function flipCard(evt) {
     setTimeout(
 checkMatch, 1000
     )
-     // checkMatch()
-      //if(isMatched){
-       // if(this.getAttribute('src') == cards[index].img){
-       // alert('hurray!')
-       // }
-     // }
+ 
     }
     updateMove()
   
   }
 function updateMove(){
   document.querySelector('.moves').innerHTML = moves;
+
 }
 
 const cardsContainer = document.querySelector('#board')
