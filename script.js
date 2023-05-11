@@ -101,6 +101,7 @@ img:'images/emojis/frog_1f438.png'
 let clicks = 1
 let cardFlipped = []
 let isMatched = false
+//let lockBoard = false
 let moves = 0
 let clickedContainers = []
 
@@ -128,6 +129,7 @@ function checkMatch() {
 }
 
 function flipCard(evt) {
+//if (lockBoard) return
   //update clicked container
   clickedContainers.push(evt.target)
  // console.log(clickedContainers)
@@ -160,9 +162,14 @@ console.log('target',evt.target)
       clicks = 1
       cardFlipped.push(data)
     console.log(cardFlipped)
-    setTimeout(
-checkMatch, 1000
-    )
+    
+    setTimeout(()=>{
+      const images = document.querySelectorAll('.imageName')
+      images.forEach(name => {
+        name.style.display= 'none'
+      });
+      revertBack()
+    },1000)
  
     }
     updateMove()
@@ -191,10 +198,10 @@ function buildCard() {
     element.classList.add('card-wrapper')
     imageEl.addEventListener('click', flipCard)
     cardsContainer.appendChild(element)
-    console.log('got here')
-    console.log(isMatched)
+    // console.log('got here')
+    // console.log(isMatched)
     if(isMatched){
-      alert('Good Match!')
+      // alert('Good Match!')
       isMatched = false;
     }
     updateMove()
