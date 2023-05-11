@@ -31,11 +31,12 @@ a {
 
 #board {
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(5, 17vmin);
   grid-template-rows: repeat(4, 17vmin);
   gap: 1vmin;
   margin-top: 5px;
-  border: 7px solid rgb(207, 54, 54);
+  border: 1vmin solid rgb(207, 54, 54);
 }
 
 .container {
@@ -91,7 +92,6 @@ align-items: center;
  display: grid;
  justify-content: center;
 }
-
 
 #restartButton {
   width: 100px;

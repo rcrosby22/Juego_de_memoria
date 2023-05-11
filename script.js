@@ -104,6 +104,10 @@ let isMatched = false
 let moves = 0
 let clickedContainers = []
 
+window.onload = function () {
+  document.getElementById('my_audio').play()
+}
+
 
 const revertBack = () =>{
   for (let i = 0; i<clickedContainers.length; i++) {
