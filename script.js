@@ -101,17 +101,16 @@ img:'images/emojis/frog_1f438.png'
 let clicks = 1
 let cardFlipped = []
 let isMatched = false
-//let lockBoard = false
 let moves = 0
 let clickedContainers = []
 
 
 const revertBack = () =>{
- // imageEl.setAttribute('src', 'images/emojis/black.avif')
   for (let i = 0; i<clickedContainers.length; i++) {
     clickedContainers[i].setAttribute('src', 'images/emojis/black.avif')
     clickedContainers[i].setAttribute('data-revealed', false)
   }
+  cardFlipped = []
   clickedContainers = []
 
 
@@ -121,15 +120,14 @@ function checkMatch() {
   clicks = 1
   if (cardFlipped[0] === cardFlipped[1]) {
     cardFlipped = []
-    
     clickedContainers = []
     isMatched = true
-    console.log(isMatched)
+   
   } else {revertBack()}
 }
 
 function flipCard(evt) {
-//if (lockBoard) return
+
   //update clicked container
   clickedContainers.push(evt.target)
  // console.log(clickedContainers)
@@ -168,8 +166,10 @@ console.log('target',evt.target)
       images.forEach(name => {
         name.style.display= 'none'
       });
+      checkMatch()
+      
       revertBack()
-    },1000)
+    },2000)
  
     }
     updateMove()
