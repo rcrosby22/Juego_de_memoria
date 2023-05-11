@@ -7,7 +7,6 @@
   color: rgb(207, 54, 54);
 }
   
-
 body {
   font-family: 'Roboto', sans-serif;
   font-family: 'Sigmar', cursive;;
@@ -18,13 +17,14 @@ body {
   background-image: url(images/emojis/barn-farm-field_1308-68369.avif);
   background-repeat: no-repeat;
   background-size: 100%;
-  ;
 }
+
 a {
   font-size: 38px;
   text-decoration: none;
   color: rgb(207, 54, 54);
 }
+
 .instructions {
   color: rgb(207, 54, 54)
 }
@@ -36,15 +36,14 @@ a {
   gap: 1vmin;
   margin-top: 5px;
   border: 7px solid rgb(207, 54, 54);
-  
-  
-  
 }
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .card-wrapper {
   transform: rotateY(0);
   transition: 0.5s;
@@ -59,10 +58,6 @@ a {
   cursor: pointer;
   height: 125px;
   padding: 8px;
-}
-
-.flipCard {
-  /* transform: rotateY(180deg); */
 }
 
 .front, .back {
@@ -80,11 +75,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
+
 .back {
   height: 80%;
- 
-
 }
+
 .imageName {
   height: 10%;
   color: white;
@@ -97,9 +92,6 @@ align-items: center;
  justify-content: center;
 }
 
-.boardBox {
-  
-}
 
 #restartButton {
   width: 100px;
@@ -113,6 +105,7 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 color: rgb(207, 54, 54);
+font-size: 20px;
 }
 
 .bodyOne {
