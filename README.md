@@ -53,20 +53,18 @@
 
 ##### image header 1
 
-![Image]()
 
-
-![Image]()
 
 ***
 
 ### **_Future Updates_**
 
-- [ ] Future Update 1
-- [ ] Future Update 2
+- [ provide levels with different sections of learning] Future Update 1
+- [ more tech will be included throughout the course] Future Update 2
 - [] Completed Update
-- [] ~~Strikethrough~~ Items Also
+- [] 
 
 ***
 
 ### **_Credits_**
+I used the 9Fisher-Yates method for the shuffle feature

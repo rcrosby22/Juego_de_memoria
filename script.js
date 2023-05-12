@@ -1,5 +1,3 @@
-
-
 const cards = [
   {
     name: 'Dog',
@@ -108,7 +106,6 @@ window.onload = function () {
   document.getElementById('my_audio').play()
 }
 
-
 const revertBack = () =>{
   for (let i = 0; i<clickedContainers.length; i++) {
     clickedContainers[i].setAttribute('src', 'images/emojis/black.avif')
@@ -116,8 +113,6 @@ const revertBack = () =>{
   }
   cardFlipped = []
   clickedContainers = []
-
-
 }
 
 function checkMatch() {
@@ -125,8 +120,7 @@ function checkMatch() {
   if (cardFlipped[0] === cardFlipped[1]) {
     cardFlipped = []
     clickedContainers = []
-    isMatched = true
-   
+    isMatched = true 
   } else {revertBack()}
 }
 
@@ -139,13 +133,11 @@ function flipCard(evt) {
   
   let reveal = this.getAttribute('data-revealed')
   let imageName = document.createElement('p')
-
   imageName.classList.add('imageName')
   imageName.innerHTML= cards[index].name
 console.log('target',evt.target)
   if (reveal === 'false' && clicks ===1) {
     clicks = clicks + 1
-    
     this.setAttribute('data-revealed', true)
     this.setAttribute('src', cards[index].img)
     this.parentElement.appendChild(imageName)
@@ -154,7 +146,6 @@ console.log('target',evt.target)
     console.log(cardFlipped)
   } else if (clicks === 2) {
     moves++
-
 
       this.setAttribute('data-revealed', true)
       this.setAttribute('src', cards[index].img)
@@ -212,8 +203,6 @@ function buildCard() {
 shuffleCards()
 buildCard()
 
-
-
 const restart = () => {
   location.reload()
 }
@@ -234,4 +223,4 @@ function shuffleCards() {
   }
 }
 
-// for each with card and div, img
+
