@@ -202,10 +202,9 @@ function buildCard() {
     element.classList.add('card-wrapper')
     imageEl.addEventListener('click', flipCard)
     cardsContainer.appendChild(element)
-    // console.log('got here')
-    // console.log(isMatched)
+  
     if(isMatched){
-      // alert('Good Match!')
+   
       isMatched = false;
     }
     updateMove()
@@ -215,13 +214,7 @@ shuffleCards()
 buildCard()
 console.log(buildCard)
 
-/*----- app's state (variables) -----*/
-// let revealedCount = 0
-// let activeCard = null
-// let loss = false
-/*----- cached element references -----*/
 
-/*----- event listeners -----*/
 const restart = () => {
   location.reload()
 }
@@ -242,4 +235,4 @@ function shuffleCards() {
   }
 }
 
-// for each with card and div, img
+h
