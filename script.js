@@ -1,3 +1,5 @@
+// const cards = ['dog', 'perro', 'cow', 'vaca', 'monkey', 'mono', 'chicken', 'pollo', 'rabbit', 'conejo', 'horse', 'cabello', 'bee', 'abeja', 'frog', 'rana', 'snail', 'caracol', 'snake', 'serpiente']
+
 const cards = [
   {
     name: 'Dog',
@@ -106,6 +108,7 @@ window.onload = function () {
   document.getElementById('my_audio').play()
 }
 
+
 const revertBack = () =>{
   for (let i = 0; i<clickedContainers.length; i++) {
     clickedContainers[i].setAttribute('src', 'images/emojis/black.avif')
@@ -113,6 +116,8 @@ const revertBack = () =>{
   }
   cardFlipped = []
   clickedContainers = []
+
+
 }
 
 function checkMatch() {
@@ -120,24 +125,27 @@ function checkMatch() {
   if (cardFlipped[0] === cardFlipped[1]) {
     cardFlipped = []
     clickedContainers = []
-    isMatched = true 
+    isMatched = true
+   
   } else {revertBack()}
 }
 
 function flipCard(evt) {
 
-
+  //update clicked container
   clickedContainers.push(evt.target)
-
+ // console.log(clickedContainers)
  let index = this.getAttribute('data-id')
   
   let reveal = this.getAttribute('data-revealed')
   let imageName = document.createElement('p')
+  //imageName.setAttribute('id', )
   imageName.classList.add('imageName')
   imageName.innerHTML= cards[index].name
 console.log('target',evt.target)
   if (reveal === 'false' && clicks ===1) {
     clicks = clicks + 1
+    
     this.setAttribute('data-revealed', true)
     this.setAttribute('src', cards[index].img)
     this.parentElement.appendChild(imageName)
@@ -146,6 +154,8 @@ console.log('target',evt.target)
     console.log(cardFlipped)
   } else if (clicks === 2) {
     moves++
+  // index = this.getAttribute('data-id')
+    //imageName.innerHTML= cards[index].name
 
       this.setAttribute('data-revealed', true)
       this.setAttribute('src', cards[index].img)
@@ -192,9 +202,10 @@ function buildCard() {
     element.classList.add('card-wrapper')
     imageEl.addEventListener('click', flipCard)
     cardsContainer.appendChild(element)
-
+    // console.log('got here')
+    // console.log(isMatched)
     if(isMatched){
-     
+      // alert('Good Match!')
       isMatched = false;
     }
     updateMove()
@@ -202,7 +213,15 @@ function buildCard() {
 }
 shuffleCards()
 buildCard()
+console.log(buildCard)
 
+/*----- app's state (variables) -----*/
+// let revealedCount = 0
+// let activeCard = null
+// let loss = false
+/*----- cached element references -----*/
+
+/*----- event listeners -----*/
 const restart = () => {
   location.reload()
 }
@@ -223,4 +242,4 @@ function shuffleCards() {
   }
 }
 
-
+// for each with card and div, img
