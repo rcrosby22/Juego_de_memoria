@@ -132,14 +132,14 @@ function checkMatch() {
 
 function flipCard(evt) {
 
-  //update clicked container
+  
   clickedContainers.push(evt.target)
- // console.log(clickedContainers)
+
  let index = this.getAttribute('data-id')
   
   let reveal = this.getAttribute('data-revealed')
   let imageName = document.createElement('p')
-  //imageName.setAttribute('id', )
+  
   imageName.classList.add('imageName')
   imageName.innerHTML= cards[index].name
 console.log('target',evt.target)
@@ -154,8 +154,7 @@ console.log('target',evt.target)
     console.log(cardFlipped)
   } else if (clicks === 2) {
     moves++
-  // index = this.getAttribute('data-id')
-    //imageName.innerHTML= cards[index].name
+  
 
       this.setAttribute('data-revealed', true)
       this.setAttribute('src', cards[index].img)
@@ -235,4 +234,4 @@ function shuffleCards() {
   }
 }
 
-h
+
